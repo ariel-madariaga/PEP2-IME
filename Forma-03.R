@@ -96,3 +96,24 @@ cat("Homogeneidad de las varianzas", homogeneidad)
 
 
 ###########ENUNCIADO PREGUNTA 2#####################
+
+
+
+###########ENUNCIADO PREGUNTA 3#####################
+# Proponga un ejemplo novedoso (no mencionado en clase ni que aparezca en las lecturas dadas) en donde un
+# estudio o experimento, relacionado con las expectativas de los chilenos para el nuevo gobierno, necesite utilizar una
+# prueba de Friedman debido a problemas con la escala de la variable dependiente en estudio. Indiqué cuáles serían las
+# variables involucradas en su ejemplo (con sus respectivos niveles) y las hipótesis nula y alternativa a contrastar.
+
+# Luego de que Boric saliera electo en las ultimas elecciones, se ha hablado 
+# mucho de que pasara con el país, por lo que, se decidió 
+# realizar un estudio respecto a las expectativas de los chilenos para este 
+# nuevo gobierno. Por lo que se ha seleccionado una muestra aleatoria representativa 
+# de las 3 clases sociales (clase baja, clase media y clase alta) y se les ha solicitado 
+# evaluar 2 aspectos de las expectativas del gobierno de Boric con una escala Likert de 5 puntos, 
+# donde el valor 1 corresponde a una valoración muy negativa y 5, a una muy positiva. Entonces las 
+# hipótesis a contrastar son:
+# H0: las diferentes clases sociales tienen expectativas similares. 
+# HA: al menos una clase social obtiene una expectativa distinta a las demás.
+
+
