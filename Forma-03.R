@@ -132,7 +132,15 @@ print(holm)
 # por los comandantes y los Flametroopers son los peores evaluados.
 
 ###########ENUNCIADO PREGUNTA 2#####################
+# semilla
+set.seed(407)
 
+#se obtienen los datos de entranamiento
+n <- nrow(datos)
+n_entrenamiento <- floor(0.8 * n)
+muestra <- sample.int(n = n, size = n_entrenamiento, replace = FALSE)
+entrenamiento <- datos[muestra, ]
+prueba <- datos[-muestra, ]
 
 
 ###########ENUNCIADO PREGUNTA 3#####################
