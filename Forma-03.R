@@ -102,6 +102,27 @@ g2 <- ezPlot(data =datos, dv = eval_comandante, wid = instancia, between = divis
              x = division)
 print(g2)
 
+####### CONCLUSION 1 ###########
+# Dado que nuestro valor P es mucho menor a nuestro nivel de significacion alfa, con un 99% de seguridad
+# se rechaza la hipotesis nula en favor a la hipotesis alternativa. Entonces, La media de la evaluación 
+# de los comandante es distinta para al menos una de las divisiones. # Es por lo anterior, que se realiza
+# un análisis POST-HOC con correcciones de Bonferroni y Holm.
+
+alfa <- 0.01
+
+# Procedimiento post-hoc de Bonferroni
+cat("Procedimiento post-hoc de Bonferroni\n")
+bonferroni <- pairwise.t.test(datos[["eval_comandante"]], datos[["division"]], p.adj = "bonferroni", 
+                              pool.sd = TRUE, paired = FALSE, conf.level = 1-alfa)
+
+print(bonferroni)
+
+# Procedimiento post-hoc de Holm
+cat("Procedimiento post-hoc de Holm\n")
+holm <- pairwise.t.test(datos[["eval_comandante"]], datos[["division"]], p.adj = "holm", 
+                        pool.sd = TRUE, paired = FALSE, conf.level = 1-alfa)
+print(holm)
+
 ####### CONCLUSIONES ####### 
 # Dado que nuestro valor P es mucho menor a nuestro nivel de significacion alfa, con un 99% de seguridad
 # se rechaza la hipotesis nula en favor a la hipotesis alternativa.
