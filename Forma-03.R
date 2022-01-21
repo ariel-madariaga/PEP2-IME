@@ -117,16 +117,17 @@ bonferroni <- pairwise.t.test(datos[["eval_comandante"]], datos[["division"]], p
 
 print(bonferroni)
 
-# Procedimiento post-hoc de Holm
+# Procedimiento post-hoc de Holm 
 cat("Procedimiento post-hoc de Holm\n")
 holm <- pairwise.t.test(datos[["eval_comandante"]], datos[["division"]], p.adj = "holm", 
                         pool.sd = TRUE, paired = FALSE, conf.level = 1-alfa)
 print(holm)
 
-####### CONCLUSIONES ####### 
-# Dado que nuestro valor P es mucho menor a nuestro nivel de significacion alfa, con un 99% de seguridad
-# se rechaza la hipotesis nula en favor a la hipotesis alternativa.
-
+####### CONCLUSION FINAL ####### 
+# Los valores p obtenidos con el método de Bonferroni y de Holm son iguales.
+# Sin embargo, en ambos casos podemos ver que los stormtroopers Flametrooper y Lavatrooper presentan una 
+# diferencia con respecto a los otros stormtroopers siendo así que los Lavatroopers son mejor evaluados 
+# por los comandantes y los Flametroopers son los peores evaluados.
 
 ###########ENUNCIADO PREGUNTA 2#####################
 
