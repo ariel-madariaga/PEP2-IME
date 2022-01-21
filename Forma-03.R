@@ -39,10 +39,12 @@
 # Importación de librerias
 library(dplyr)
 library(ggpubr)
+library(ez)
+library(MASS)
 
 
 # Cambiar dirección donde tenga su archivo.
-datos<-read.csv("C:\\Users\\Lenovo\\Desktop\\Datos PEP 2.csv")
+datos<-read.csv2("C:\\Users\\Lenovo\\Desktop\\Datos PEP 2.csv")
 
 # Comprobación de normalidad
 datos[["division"]] <- factor(datos[["division"]])
@@ -90,9 +92,19 @@ var_Recon <- sd(muestra_Recon)^2
 varianzas <- c(var_Cave, var_Snow, var_Lava, var_Shore, var_Space, var_Sand, var_Flame, var_Recon)
 homogeneidad <- max(varianzas) / min(varianzas)
 cat("Homogeneidad de las varianzas", homogeneidad)
+
+# PRUEBA ANOVA 
+prueba <- ezANOVA(data = datos, dv = eval_comandante, wid = instancia, between = division, return_aov = TRUE, type = 2)
+print(prueba)
+
+# Gráfico del tamaño del efecto
+g2 <- ezPlot(data =datos, dv = eval_comandante, wid = instancia, between = division, y_lab = "Evaluación promedio de los comandantes",
+             x = division)
+print(g2)
+
 ####### CONCLUSIONES ####### 
-#
-#
+# Dado que nuestro valor P es mucho menor a nuestro nivel de significacion alfa, con un 99% de seguridad
+# se rechaza la hipotesis nula en favor a la hipotesis alternativa.
 
 
 ###########ENUNCIADO PREGUNTA 2#####################
