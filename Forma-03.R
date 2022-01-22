@@ -135,12 +135,6 @@ print(holm)
 # semilla
 set.seed(407)
 
-#se obtienen los datos de entrenamiento
-n <- nrow(datos)
-n_entrenamiento <- floor(0.8 * n)
-muestra <- sample.int(n = n, size = n_entrenamiento, replace = FALSE)
-entrenamiento <- datos[muestra, ]
-
 # datos de prueba
 prueba <- datos[-muestra, ]
 
@@ -150,6 +144,18 @@ estatura <- datos %>% select("estatura")
 peso <- datos %>% select("peso")
 fuerza <- datos %>% select("fuerza")
 
+datos2 <- integer(100)
+datos2 <- cbind(datos2, evalInstructor)
+datos2 <- cbind(datos2, estatura)
+datos2 <- cbind(datos2, peso)
+datos2 <- cbind(datos2, fuerza)
+
+datos2$datos2 <- NULL
+#se obtienen los datos de entrenamiento
+n <- nrow(datos2)
+n_entrenamiento <- floor(0.8 * n)
+muestra <- sample.int(n = n, size = n_entrenamiento, replace = FALSE)
+entrenamiento <- datos[muestra, ]
 
 
 ###########ENUNCIADO PREGUNTA 3#####################
