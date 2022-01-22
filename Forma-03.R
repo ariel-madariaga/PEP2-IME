@@ -135,12 +135,23 @@ print(holm)
 # semilla
 set.seed(407)
 
-#se obtienen los datos de entranamiento
+#se obtienen los datos de entrenamiento
 n <- nrow(datos)
 n_entrenamiento <- floor(0.8 * n)
 muestra <- sample.int(n = n, size = n_entrenamiento, replace = FALSE)
 entrenamiento <- datos[muestra, ]
+
+# datos de prueba
 prueba <- datos[-muestra, ]
+
+# variables predictoras
+evalInstructor <- datos %>% select()
+evalCapitan
+evalComandante
+estatura
+peso
+fuerza
+
 
 
 ###########ENUNCIADO PREGUNTA 3#####################
