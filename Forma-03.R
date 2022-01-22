@@ -145,12 +145,10 @@ entrenamiento <- datos[muestra, ]
 prueba <- datos[-muestra, ]
 
 # variables predictoras
-evalInstructor <- datos %>% select()
-evalCapitan
-evalComandante
-estatura
-peso
-fuerza
+evalInstructor <- datos %>% select("eval_instructor")
+estatura <- datos %>% select("estatura")
+peso <- datos %>% select("peso")
+fuerza <- datos %>% select("fuerza")
 
 
 
