@@ -151,12 +151,11 @@ datos2 <- cbind(datos2, peso)
 datos2 <- cbind(datos2, fuerza)
 
 datos2$datos2 <- NULL
-#se obtienen los datos de entrenamiento
+# se obtienen los datos de entrenamiento
 n <- nrow(datos2)
 n_entrenamiento <- floor(0.8 * n)
 muestra <- sample.int(n = n, size = n_entrenamiento, replace = FALSE)
 entrenamiento <- datos[muestra, ]
-
 
 ###########ENUNCIADO PREGUNTA 3#####################
 # Proponga un ejemplo novedoso (no mencionado en clase ni que aparezca en las lecturas dadas) en donde un
